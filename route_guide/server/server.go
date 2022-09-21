@@ -39,8 +39,8 @@ import (
 
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/examples/data"
-	"google.golang.org/grpc/examples/route_guide/routeguide"
-	pb "google.golang.org/grpc/examples/route_guide/routeguide"
+
+	pb "github.com/wscrlhs/grpc-example/route_guide/protos"
 
 	"github.com/golang/protobuf/proto"
 )
@@ -54,7 +54,6 @@ var (
 )
 
 type routeGuideServer struct {
-	routeguide.RouteGuideClient
 	pb.UnimplementedRouteGuideServer
 	savedFeatures []*pb.Feature // read-only after initialized
 
